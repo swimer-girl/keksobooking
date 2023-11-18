@@ -60,4 +60,4 @@ const getObject = () => ({
 
 //const getObject = () => Array.from({length: 10}, (_, offerIndex) => createLocation(offerIndex + 1)) + Array.from({length: 10}, (_, offerIndex) => createOffer(offerIndex + 1));
 
-console.log(getObject());
+export {getObject};
