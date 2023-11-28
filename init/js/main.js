@@ -1,3 +1,3 @@
-import {getObject} from './data.js';
+import {createOfferCard} from './popupcard.js';
 
-console.log(getObject());
+createOfferCard();
