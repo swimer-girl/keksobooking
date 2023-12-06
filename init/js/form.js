@@ -2,6 +2,8 @@ const getForm = document.querySelector('.ad-form');
 const priceField = getForm.querySelector('#price');
 const numberRoom = getForm.querySelector('#room_number');
 const capacity = getForm.querySelector('#capacity');
+const timeIn = getForm.querySelector('#timein');
+const timeOut = getForm.querySelector('#timeout');
 
 const pristine = new Pristine(getForm, {
   classTo: 'ad-form__element',
@@ -59,6 +61,18 @@ function capacityRoomErrorMessage () {
   }
 }
 
+function onTimeChange() {
+  if (this === timeIn) {
+    timeOut.value = this.value;
+  } else if (this === timeOut) {
+    timeIn.value = this.value;
+  }
+}
+
+// Навешиваем обработчик на изменение времени
+timeIn.addEventListener('change', onTimeChange);
+timeOut.addEventListener('change', onTimeChange);
+
 // Добавляем валидатор для проверки полей
 pristine.addValidator(
   getForm.querySelector('#title'),
@@ -75,8 +89,8 @@ getForm.addEventListener('submit', (event) => {
   const isValid = pristine.validate();
 
   if (isValid) {
-    //console.log('Форма валидна. Отправляем данные на сервер.');
+    console.log('Форма валидна. Отправляем данные на сервер.');
   } else {
-    //console.log('Форма невалидна');
+    console.log('Форма невалидна');
   }
 });
