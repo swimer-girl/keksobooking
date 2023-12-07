@@ -1,4 +1,4 @@
-//import { createOfferCard } from './popupcard.js';
+import { initMap } from './map.js';
 
 const adForm = document.querySelector('.ad-form');
 const fielsets = document.querySelectorAll('.ad-form__element');
@@ -65,13 +65,7 @@ const setActiveState = () => {
   }
 };
 
-// Стрелочная функция для инициализации карты
-const initMap = () => {
-  // Ваш код для инициализации карты с использованием Leaflet
-
-  // После успешной инициализации карты вызываем setActiveState
-  setActiveState();
-};
-
 // Вызовите функцию initMap при загрузке страницы
 document.addEventListener('DOMContentLoaded', initMap);
+
+export {setActiveState};

@@ -89,8 +89,8 @@ getForm.addEventListener('submit', (event) => {
   const isValid = pristine.validate();
 
   if (isValid) {
-    console.log('Форма валидна. Отправляем данные на сервер.');
+    //console.log('Форма валидна. Отправляем данные на сервер.');
   } else {
-    console.log('Форма невалидна');
+    //console.log('Форма невалидна');
   }
 });
