@@ -1,21 +1,19 @@
 import './statepage.js';
 import './form.js';
-import { createMarker } from './map.js';
-import { getOffer } from './data.js';
+import { createMarkers, initMap } from './map.js';
+//import { getOffer } from './data.js';
+import { getData } from './api.js';
+import { setInactiveState } from './statepage.js';
 
-getOffer(createMarker());
-const getData = async (onSuccess) => {
-  try {
-    const response = await fetch ('https://25.javascript.pages.academy/keksobooking/data');
+const MAX_OFFERS = 10;
 
-    if (!response.ok) {
-      throw new Error('Не удалось загрузить обьявления');
-    }
-    const offers = await response.json();
-    onSuccess(offers);
-  } catch (error) {
-    //onFail(error.message);
-  }
+const onMapLoad = () => {
+  getData()
+    .then((offers) => {
+      createMarkers(offers.slice(0,MAX_OFFERS));
+    });
 };
 
-getData();
+setInactiveState();
+
+initMap(onMapLoad);

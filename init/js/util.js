@@ -28,4 +28,18 @@ const getNewArray = (array) => {
   return arrayNew;
 };
 
-export {getRandomFloat, getRandomPositiveInteger, getRandomArrayElement, getNewArray};
+// Функция для создания и показа сообщения об ошибке с задержкой
+const ALERT_SHOW_TIME = 5000;
+const errorMessageTemplate = document.querySelector('#error-message');
+
+const showAlert = () => {
+  const errorMessage = errorMessageTemplate.content.cloneNode(true);
+  document.body.append(errorMessage);
+
+  // Скрытие сообщения через 5 секунд
+  setTimeout(() => {
+    errorMessage.remove();
+  }, ALERT_SHOW_TIME);
+};
+
+export {getRandomFloat, getRandomPositiveInteger, getRandomArrayElement, getNewArray, showAlert};

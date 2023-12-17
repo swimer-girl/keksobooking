@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/init/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/init/vendor/nouislider/nouislider.css"
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -232,7 +233,18 @@
     </div>
   </template>
 
+  <!--Сообщение при ошибке загрузки данных-->
+  <template id="error-message">
+    <section class="error-message">
+      <div class="error-message__inner">
+        <h2 class="error-message__title">Произошла ошибка при загрузке данных. Пожалуйста, попробуйте еще раз.</h2>
+        <button type="button" class="error-message__button">Закрыть сообщение об ошибке</button>
+      </div>
+    </section>
+  </template>
+
   <script src="/init/vendor/leaflet/leaflet.js"></script>
+  <script src="/init/vendor/nouislider/nouislider.js"></script>
   <script src="/init/vendor/pristine/pristine.min.js"></script>
   <script src="/init/js/main.js" type="module"></script>
 </body>

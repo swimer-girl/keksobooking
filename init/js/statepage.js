@@ -68,4 +68,4 @@ const setActiveState = () => {
 // Вызовите функцию initMap при загрузке страницы
 document.addEventListener('DOMContentLoaded', initMap);
 
-export {setActiveState};
+export {setActiveState, setInactiveState};
