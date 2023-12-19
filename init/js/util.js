@@ -33,9 +33,11 @@ const ALERT_SHOW_TIME = 5000;
 const errorMessageTemplate = document.querySelector('#error-message');
 
 const showAlert = () => {
-  const errorMessage = errorMessageTemplate.content.cloneNode(true);
+  //const errorMessage = errorMessageTemplate.content.cloneNode(true);
+  //document.body.append(errorMessage);
+  const errorMessageFragment = errorMessageTemplate.content.cloneNode(true);
+  const errorMessage = errorMessageFragment.firstElementChild; // Преобразование фрагмента в элемент
   document.body.append(errorMessage);
-
   // Скрытие сообщения через 5 секунд
   setTimeout(() => {
     errorMessage.remove();

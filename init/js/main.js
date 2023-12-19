@@ -1,19 +1,19 @@
 import './statepage.js';
 import './form.js';
-import { createMarkers, initMap } from './map.js';
-//import { getOffer } from './data.js';
+import { createMarkers} from './map.js';
 import { getData } from './api.js';
-import { setInactiveState } from './statepage.js';
+import { createCardElement } from './popupcard.js';
 
-const MAX_OFFERS = 10;
+// const MAX_OFFERS = 10;
 
-const onMapLoad = () => {
-  getData()
-    .then((offers) => {
-      createMarkers(offers.slice(0,MAX_OFFERS));
-    });
-};
+// getData((offers) => {
+//   offers.slice(0, MAX_OFFERS).forEach ((offer) => {
+//     createMarkers(offer, createCardElement(offer));
+//   });
+// });
 
-setInactiveState();
-
-initMap(onMapLoad);
+getData((serverData) => {
+  serverData.forEach((offer) => {
+    createMarkers(serverData, createCardElement(offer));
+  });
+});

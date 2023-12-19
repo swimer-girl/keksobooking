@@ -1,7 +1,7 @@
 import { resetMap } from './map.js';
 import { resetSlider } from './slider.js';
 import { sendData } from './api.js';
-//import { setInactiveState } from './statepage';
+import { setInactiveState } from './statepage.js';
 
 
 const getForm = document.querySelector('.ad-form');
@@ -11,6 +11,7 @@ const capacity = getForm.querySelector('#capacity');
 const timeIn = getForm.querySelector('#timein');
 const timeOut = getForm.querySelector('#timeout');
 const submitButton = getForm.querySelector('.ad-form__submit');
+const resetButton = getForm.querySelector('.ad-form__reset');
 
 const MIN_TITLE_SYMBOLS = 30;
 const MAX_TITLE_SYMBOLS =100;
@@ -103,6 +104,9 @@ const resetForm = () => {
   getForm.reset();
   resetMap();
 };
+
+resetButton.addEventListener('click', () => resetForm());
+
 const setDisableState = (state) => {
   submitButton.disabled = state;
 };
@@ -110,12 +114,11 @@ const setDisableState = (state) => {
 const onFormSubmit = (evt) => {
   evt.preventDefault();
   if (pristine.validate()) {
-    sendData(new FormData(evt.target))
-      .then (() => {
-        resetForm();
-      })
-      .finally(() => setDisableState(false));
+    setDisableState(false);
+    sendData(new FormData(evt.target));
   }
 };
 // Навешиваем обработчик на отправку формы
 getForm.addEventListener('submit', onFormSubmit);
+
+export {setDisableState, resetForm};

@@ -1,5 +1,5 @@
 import { setActiveState } from './statepage.js';
-import { createOfferCard } from './popupcard.js';
+import { createCardElement } from './popupcard.js';
 
 const address = document.querySelector('#address');
 
@@ -37,7 +37,7 @@ const renderMarker = (offer) => {
   );
   marker
     .addTo(markerGroup)
-    .bindPopup(createOfferCard(offer));
+    .bindPopup(createCardElement(offer));
 };
 
 const createMarkers = (points) => {
@@ -89,7 +89,6 @@ const resetMap = () => {
   }, ZOOM_DEFAULT);
   map.closePopup();
 };
-
 
 // Вызываем функцию инициализации карты
 export {initMap, createMarkers, resetMap, clearMarkers};
