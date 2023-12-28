@@ -3,17 +3,15 @@ import './form.js';
 import { createMarkers} from './map.js';
 import { getData } from './api.js';
 import { createCardElement } from './popupcard.js';
-
-// const MAX_OFFERS = 10;
-
-// getData((offers) => {
-//   offers.slice(0, MAX_OFFERS).forEach ((offer) => {
-//     createMarkers(offer, createCardElement(offer));
-//   });
-// });
+import { setFilterListener } from './filter.js';
+import { setPhotoListeners } from './photo.js';
 
 getData((serverData) => {
   serverData.forEach((offer) => {
     createMarkers(serverData, createCardElement(offer));
+    setFilterListener(serverData);
   });
 });
+
+setPhotoListeners();
+

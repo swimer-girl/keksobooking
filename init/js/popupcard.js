@@ -1,6 +1,3 @@
-//import { getOffer } from './data.js';
-
-//const mapCanvas = document.querySelector('#map-canvas');
 const cardTemplate = document.querySelector('#card').content.querySelector('.popup');
 
 // Функция для сопоставления типа жилья с подписями
@@ -55,12 +52,5 @@ const createCardElement = (offer) => {
 
   return cardElement;
 };
-
-// // Получаем данные для заполнения
-// const createOfferCard = () => {
-//   const offersData = getOffer();
-//   const cardElement = createCardElement(offersData[0]);
-//   mapCanvas.appendChild(cardElement);
-// };
 
 export {createCardElement};
