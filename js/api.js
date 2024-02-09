@@ -5,7 +5,7 @@ import { resetForm } from './form.js';
 const MAX_OFFERS =10;
 
 const getData = (onSuccess) => {
-  fetch ('https://25.javascript.htmlacademy.pro/keksobooking')
+  fetch ('https://25.javascript.htmlacademy.pro/keksobooking/data')
     .then((response) => response.json())
     .then((offers) => {
       if(offers) {

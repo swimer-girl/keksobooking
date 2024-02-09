@@ -8,13 +8,13 @@ const DEFAULT_LNG = 139.69212;
 const ZOOM_DEFAULT = 12;
 
 const mainPinIcon = L.icon({
-  iconUrl: '/init/img/main-pin.svg',
+  iconUrl: '/img/main-pin.svg',
   iconSize: [52, 52],
   iconAnchor: [26, 52],
 });
 
 const pinIcon = L.icon({
-  iconUrl: '/init/img/pin.svg',
+  iconUrl: '/img/pin.svg',
   iconSize: [40, 40],
   iconAnchor: [26, 40],
 });
