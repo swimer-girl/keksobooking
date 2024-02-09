@@ -15,8 +15,8 @@ const getData = (onSuccess) => {
         //unlockMapFilters();
       }
     })
-    .catch((error) => {
-      console.error('Ошибка при загрузке данных:', error);
+    .catch(() => {
+      //console.error('Ошибка при загрузке данных:', error);
       showAlert();
     });
 };

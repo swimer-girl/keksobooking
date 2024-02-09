@@ -89,4 +89,4 @@ function throttle (callback, delayBetweenFrames) {
   };
 }
 
-export {getRandomFloat, getRandomPositiveInteger, getRandomArrayElement, getNewArray, showAlert, debounce};
+export {getRandomFloat, getRandomPositiveInteger, getRandomArrayElement, getNewArray, showAlert, debounce, throttle, checkLenghtString};
